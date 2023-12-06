@@ -11,7 +11,8 @@ class HomeWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Home'),
+        title: const Text('Niveles'),
+        centerTitle: true,
       ),
       body: FutureBuilder(
         future: Validation().allLevels(),
@@ -21,9 +22,10 @@ class HomeWidget extends StatelessWidget {
             final filteredLevels = levels.where((level) => level != null).toList();
             final sortedLevels = filteredLevels..sort(compareLevels);
             return ListView(
+              
               children: sortedLevels.map((level) => LevelWidget(
                 idlevel: level!.level,
-                icon: Icons.person,
+                icon: Icons.play_lesson_outlined,
                 title: level.title,
                 subtitle: level.subtitle,
               )).toList(),
