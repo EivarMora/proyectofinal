@@ -22,9 +22,10 @@ class HomeWidget extends StatelessWidget {
             final sortedLevels = filteredLevels..sort(compareLevels);
             return ListView(
               children: sortedLevels.map((level) => LevelWidget(
+                level: level!.level,
                 icon: Icons.person,
-                title: level!.title,
-                subtitle: level!.subtitle,
+                title: level.title,
+                subtitle: level.subtitle,
               )).toList(),
             );
           } else if (snapshot.hasError) {

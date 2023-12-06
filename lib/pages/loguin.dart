@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:proyectofinal/imports/Widgets.dart';
 import 'package:proyectofinal/ServiceImpl/Validation.dart';
+import 'package:proyectofinal/reproductor/SounLevel.dart';
 
 class LoginWidget extends StatefulWidget {
   const LoginWidget({Key? key}) : super(key: key);
@@ -75,6 +76,7 @@ Future<void> validateUser(context, String name, String password) async {
   bool isValid = await val.userValidation(name, password);
 
   if (isValid) {
+    reproducir("1");
     Navigator.of(context).push(
       MaterialPageRoute(
         builder: (context) => const HomeWidget(),
