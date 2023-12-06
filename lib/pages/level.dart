@@ -1,24 +1,29 @@
 import 'package:flutter/material.dart';
+import 'package:proyectofinal/pages/palabar.dart';
 
 
 class LevelWidget extends StatelessWidget {
-  final int level;
   final IconData icon;
   final String title;
   final String subtitle;
+  final int idlevel;
 
   const LevelWidget({
     super.key,
-    required this.level,
     required this.icon,
     required this.title,
     required this.subtitle,
+    required this.idlevel
   });
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () => null,
+      onTap: () => Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (context) => Palabra(nivel: this.idlevel),
+      ),
+    ),
       mouseCursor: MouseCursor.defer,
       child: Container(
         padding: const EdgeInsets.all(16.0),

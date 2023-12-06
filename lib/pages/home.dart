@@ -22,7 +22,7 @@ class HomeWidget extends StatelessWidget {
             final sortedLevels = filteredLevels..sort(compareLevels);
             return ListView(
               children: sortedLevels.map((level) => LevelWidget(
-                level: level!.level,
+                idlevel: level!.level,
                 icon: Icons.person,
                 title: level.title,
                 subtitle: level.subtitle,

@@ -76,7 +76,6 @@ Future<void> validateUser(context, String name, String password) async {
   bool isValid = await val.userValidation(name, password);
 
   if (isValid) {
-    reproducir("1");
     Navigator.of(context).push(
       MaterialPageRoute(
         builder: (context) => const HomeWidget(),
