@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:proyectofinal/ServiceImpl/Validation.dart';
 import 'package:proyectofinal/objects/Level.dart';
@@ -46,4 +47,3 @@ int compareLevels(Level? a, Level? b) {
     return a.level.compareTo(b.level);
   }
 }
-

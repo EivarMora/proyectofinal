@@ -43,21 +43,15 @@ class _PalabraState extends State<Palabra> {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox (
               width: double.infinity,
               height: 48.0,
-              child: ElevatedButton(
-                child: const Text('Reproducir'),
-                onPressed: () {
-                  reproducir(palabras[i]);
-                },
-              ),
             ),
             SizedBox(
               width: double.infinity,
               height: 48.0,
               child: ElevatedButton(
-                child: const Text('Validar'),
+                child:  Text('Validar'),
                 onPressed: () {
                   puntos = validar(palabra.text, palabras[i]);
                   palabra.clear();
@@ -68,11 +62,25 @@ class _PalabraState extends State<Palabra> {
                     setState(() {});
                   }
                 },
-              ),
-            ),
-          ],
+                style: ElevatedButton.styleFrom(
+                  minimumSize: const Size(150, 50),
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  )
+            )
+        ))],
+        
         ),
       ),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.blueAccent,
+        onPressed: () {
+          reproducir(palabras[i]);
+        },
+        child: const Icon(Icons.play_arrow),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
 
